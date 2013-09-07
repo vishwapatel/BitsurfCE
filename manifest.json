@@ -2,9 +2,13 @@
   "name": "bitSurf",
   "manifest_version": 2,
   "version": "0.1",
-  "description": "Seamless Micropayments",
+  "description": "Seamless micropayments with Bitcoin.",
+  "background": {
+    "page": "background.html"
+  },
   "permissions": [
-    "storage"],
+    "storage",
+    "background"],
   "icons": {"128": "other_icon.png"},
   "browser_action": {
     "default_icon": "toolbar_icon.png",

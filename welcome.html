@@ -21,19 +21,13 @@
     <body>
     	<h1 align="center">bitSurf</h1>
         <p>Existing Bitcoin User?</p>
-        <div class="bs-example">
-	      <div class="alert alert-danger fade in">
-	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	        <strong>Bad Bitcoin Address!</strong> Your Bitcoin address doesn't exist, please create a new account!
-	      </div>
-	    </div>
         <div class="col-lg-6">
             <div class="input-group">
-                <span class="input-group-addon" id="bitcoin_addr">Bitcoin Address</span>
-                <input type="text" class="form-control">
+                <span class="input-group-addon">Bitcoin Address</span>
+                <input type="text" class="form-control" id="bitcoin_addr"></input>
             </div><!-- /input-group -->
             <div class="form-actions">
-	        	<button type="button" class="btn btn-default" id="loginButton">Sign in</button>
+	        	<button type="button" class="btn btn-default" id="login_button">Sign in</button>
 	        </div>
         </div><!-- /.col-lg-6 -->
         <div class="clearfix"></div>
@@ -46,8 +40,8 @@
             <input type="text" class="form-control">
         </div><!-- /input-group -->
          <div class="input-group">
-	          <span class="input-group-addon" id="pass">Password</span>
-	          <input type="password" class="form-control">
+	          <span class="input-group-addon"> Password</span>
+	          <input type="password" class="form-control" id="pass"></input>
         </div><!-- /input-group -->
         <div class="form-actions">
 	        	<button type="button" class="btn btn-default" id="make_acct">Make new account!</button>
@@ -55,6 +49,7 @@
         </div><!-- /.col-lg-6 -->
         <br />
     </body>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="jquery-2.0.3.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="home.js"></script>
 </html>
