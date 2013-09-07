@@ -6,8 +6,17 @@
   "background": {
     "page": "background.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery-2.0.3.js","detectactions.js"]
+    }
+  ],
   "permissions": [
+    "http://*/*",
+    "https://*/*",
     "storage",
+    "tabs",
     "background"],
   "icons": {"128": "other_icon.png"},
   "browser_action": {
