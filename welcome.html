@@ -20,10 +20,16 @@
     </head>
     <body>
     	<h1 align="center">bitSurf</h1>
-        <p>Existing Coinbase User?</p>
+        <p>Existing Bitcoin User?</p>
+        <div class="bs-example">
+	      <div class="alert alert-danger fade in">
+	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	        <strong>Bad Bitcoin Address!</strong> Your Bitcoin address doesn't exist, please create a new account!
+	      </div>
+	    </div>
         <div class="col-lg-6">
             <div class="input-group">
-                <span class="input-group-addon" id="user">Coinbase Username</span>
+                <span class="input-group-addon" id="bitcoin_addr">Bitcoin Address</span>
                 <input type="text" class="form-control">
             </div><!-- /input-group -->
             <div class="form-actions">
@@ -33,21 +39,22 @@
         <div class="clearfix"></div>
         <br />
         <br />
-        <p>New Coinbase User</p>
+        <p>Sign Up for New Bitcoin Account (Coinbase)</p>
         <div class="col-lg-6">
         <div class="input-group">
-            <span class="input-group-addon" id="newUser">Username</span>
+            <span class="input-group-addon" id="email">Email</span>
             <input type="text" class="form-control">
         </div><!-- /input-group -->
          <div class="input-group">
-	          <span class="input-group-addon" id="newPass">Password</span>
+	          <span class="input-group-addon" id="pass">Password</span>
 	          <input type="password" class="form-control">
         </div><!-- /input-group -->
         <div class="form-actions">
-	        	<button type="button" class="btn btn-default" id="makeAcct">Make new account!</button>
+	        	<button type="button" class="btn btn-default" id="make_acct">Make new account!</button>
 	    </div>
         </div><!-- /.col-lg-6 -->
         <br />
     </body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </html>
