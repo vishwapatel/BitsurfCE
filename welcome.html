@@ -4,40 +4,57 @@
         <style type="text/css">
              body {
                 width: 500px;
-                height: 200px;
                 overflow: hidden;
+             }
+             p{
+                text-align: center;
+             }
+             .form-actions {
+             	margin-top: 10px;
+             	text-align: center;
+             }
+             .input-group {
+             	padding-top: 10px;
              }
          </style>
     </head>
     <body>
-          <h1>Existing Coinbase User?</h1>
-          <div class="col-lg-6">
+    	<h1 align="center">bitSurf</h1>
+        <p>Existing Bitcoin User?</p>
+        <div class="bs-example">
+	      <div class="alert alert-danger fade in">
+	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	        <strong>Bad Bitcoin Address!</strong> Your Bitcoin address doesn't exist, please create a new account!
+	      </div>
+	    </div>
+        <div class="col-lg-6">
             <div class="input-group">
-              <span class="input-group-addon">Coinbase Username</span>
-              <input type="text" class="form-control">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-              </span>
+                <span class="input-group-addon" id="bitcoin_addr">Bitcoin Address</span>
+                <input type="text" class="form-control">
             </div><!-- /input-group -->
-          </div><!-- /.col-lg-6 -->
-          <br />
-          <h1>New Coinbase User</h1>
-          <div class="col-lg-6">
-            <div class="input-group">
-              <span class="input-group-addon">New Username</span>
-              <input type="text" class="form-control">
-              <span class="input-group-btn">
-              </span>
-            </div><!-- /input-group -->
-             <div class="input-group">
-              <span class="input-group-addon">New Password</span>
-              <input type="text" class="form-control">
-              
-            </div><!-- /input-group -->
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Make new account!</button>
-              </span>
-          </div><!-- /.col-lg-6 -->
+            <div class="form-actions">
+	        	<button type="button" class="btn btn-default" id="loginButton">Sign in</button>
+	        </div>
+        </div><!-- /.col-lg-6 -->
+        <div class="clearfix"></div>
+        <br />
+        <br />
+        <p>Sign Up for New Bitcoin Account (Coinbase)</p>
+        <div class="col-lg-6">
+        <div class="input-group">
+            <span class="input-group-addon" id="email">Email</span>
+            <input type="text" class="form-control">
+        </div><!-- /input-group -->
+         <div class="input-group">
+	          <span class="input-group-addon" id="pass">Password</span>
+	          <input type="password" class="form-control">
+        </div><!-- /input-group -->
+        <div class="form-actions">
+	        	<button type="button" class="btn btn-default" id="make_acct">Make new account!</button>
+	    </div>
+        </div><!-- /.col-lg-6 -->
+        <br />
     </body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </html>
