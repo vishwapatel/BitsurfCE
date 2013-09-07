@@ -1,14 +1,53 @@
 <html>
-	<head>
-		
-	</head>
-	<body>
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-		<div class="input-group">
-		  <span class="input-group-addon">Coinbase Username</span>
-		  <input type="text" class="form-control" placeholder="Username">
-		</div>
-	</body>
-
+    <head>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <style type="text/css">
+             body {
+                width: 500px;
+                overflow: hidden;
+             }
+             p{
+                text-align: center;
+             }
+             .form-actions {
+             	margin-top: 10px;
+             	text-align: center;
+             }
+             .input-group {
+             	padding-top: 10px;
+             }
+         </style>
+    </head>
+    <body>
+    	<h1 align="center">bitSurf</h1>
+        <p>Existing Coinbase User?</p>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-addon" id="user">Coinbase Username</span>
+                <input type="text" class="form-control">
+            </div><!-- /input-group -->
+            <div class="form-actions">
+	        	<button type="button" class="btn btn-default" id="loginButton">Sign in</button>
+	        </div>
+        </div><!-- /.col-lg-6 -->
+        <div class="clearfix"></div>
+        <br />
+        <br />
+        <p>New Coinbase User</p>
+        <div class="col-lg-6">
+        <div class="input-group">
+            <span class="input-group-addon" id="newUser">Username</span>
+            <input type="text" class="form-control">
+        </div><!-- /input-group -->
+         <div class="input-group">
+	          <span class="input-group-addon" id="newPass">Password</span>
+	          <input type="password" class="form-control">
+        </div><!-- /input-group -->
+        <div class="form-actions">
+	        	<button type="button" class="btn btn-default" id="makeAcct">Make new account!</button>
+	    </div>
+        </div><!-- /.col-lg-6 -->
+        <br />
+    </body>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </html>
