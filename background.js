@@ -12,7 +12,7 @@ function onMessage(request, sender, sendResponse) {
 
 chrome.runtime.onMessage.addListener(onMessage);
 
-chrome.extension.onRequest.addListener(function(resquest, sender, sendResponse) {
+chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
         if(request.method == "send-payment") {
                 chrome.storage.local.get("bitcoin_addr", function(data) {
                         var callUrl = 'http://ec2-23-22-205-148.compute-1.amazonaws.com:8000/send-payment?bitcoin_addr=' + data + '&website=' + request.url;
