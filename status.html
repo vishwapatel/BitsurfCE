@@ -1,6 +1,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+        <link rel="stylesheet" href="main.css">
         <style type="text/css">
              body {
                 width: 500px;
@@ -16,10 +18,69 @@
              .input-group {
              	padding-top: 10px;
              }
+
+             .well {
+                padding: 2px;
+                background-color: #D48D42;
+             }
+
+             #logout {
+                cursor: pointer;
+                min-height:0px;
+                height: 30px;
+             }
+
+             #header {
+                min-height:0px;
+                height: 50px;
+             }
+
+             #content {
+                min-height:0px;
+                height: 90px;
+                float:left;
+             }
+
+             #logouttext {
+                cursor: pointer;
+                margin-top: 0.4em;
+                font-size: 1em;
+             }
+
+             .tightDash {
+                margin-top: 0.5em;
+             }
+
+             .tighterDash {
+                margin-top: 0.5em;
+             }
+             }
          </style>
     </head>
     <body>
-    	Hello
+    <div class="pure-u-1 dashboard-piece dashboard-piece-orangebg" id="header">
+                <div class="dashboard-content">
+                    <p class="dashboard-metric tighterDash">bitSurf</p>
+                </div>
+            </div>
+
+     <div class="pure-u-1 dashboard-piece dashboard-piece-bluebg" id="content">
+                <div class="dashboard-content">
+                     <p class="dashboard-metric tightDash" id = "acct_bal"></p>
+                </div>
+            </div>
+
+     <div class="pure-u-1 dashboard-piece dashboard-piece-graybg" id="logout">
+        <div class="dashboard-content">
+            <p class="dashboard-metric" id = "logouttext">Logout</p>
+        </div>
+    </div>
+   <footer>
+            Defu, Manosai, Matt, Vishwa
+        </footer>
+       
     </body>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="jquery-2.0.3.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="status.js"></script>
 </html>
