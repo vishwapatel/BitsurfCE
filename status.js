@@ -13,8 +13,8 @@ $(document).ready(function() {
                 chrome.storage.local.set({'total_earned': data['total_earned']}, function () {
                                             console.log(data);
                                             total_earned = data['total_earned'];
-                                            $('#acct_bal').html("$" + total_earned + '<span class="light">in bitSurf</span>');
-                                         });
+                                            $('#acct_bal').html(total_earned + ' BTC<span class="light">in bitSurf</span>');
+                                        });
             });
         }
     });
