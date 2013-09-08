@@ -25,7 +25,7 @@ $(document).ready(function() {
         if(click_count >= 3) {
         	console.log(window.location.href);
         	var matches = new Array();
-        	for (var site in sites.sites) {
+        	for (var site in sites) {
         		console.log(site);
         		if (window.location.href.indexOf(site) != -1) {
         			matches.push(site);
