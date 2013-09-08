@@ -6,6 +6,10 @@ function onMessage(request, sender, sendResponse) {
   		success:function(data) {
   			sendResponse(data);
 	}});
+
+	if(request.method == "send-payment") {
+		console.log("caught");
+	}
 	
 	return true;
 }};
