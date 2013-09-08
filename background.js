@@ -22,11 +22,11 @@ function onMessage(request, sender, sendResponse) {
                                 var total_earned = data['total_earned'];
                                 alert("YOUR TOTAL IS : "+ total_earned);
                                 chrome.storage.local.set({"total_earned": total_earned}, function(response) {});
-                                chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+                                /*chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
                                         chrome.tabs.sendMessage(tabs[0].id, {"total_earned": total_earned}, function(response) {
                                                 console.log(response);
                                         });
-                                });
+                                });*/
                         });
             });
         }
