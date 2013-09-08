@@ -23,5 +23,5 @@ $(document).ready(function() {
         chrome.storage.local.remove('bitcoin_addr');
         window.location.replace("welcome.html");
     });
-			
+
 });

@@ -22,6 +22,6 @@
   "icons": {"128": "other_icon.png"},
   "browser_action": {
     "default_icon": "toolbar_icon.png",
-	"default_popup": "welcome.html"
+  "default_popup": "welcome.html"
   }
 }
