@@ -11,12 +11,13 @@ $(document).ready(function() {
     window.setInterval(function() {
         if(click_count >= 3) {
         	console.log("greater than 3");
-            chrome.extension.sendRequest({method: "send-payment", url: window.location.hostname}, function (response) {
+            chrome.runtime.sendMessage({method: "send-payment", url: window.location.hostname}, function (response) {
                 console.log(response.status);
             });
+            console.log("gets here");
             click_count = 0;
         }
-    }, 5000);
+    }, 1000);
 });
  
  /*
