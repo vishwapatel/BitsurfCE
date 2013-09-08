@@ -1,20 +1,56 @@
 var click_count = 0;
 var bitsurf_value = 0.0001;
 var current_earnings = 0;
-var facebook_value =
+var facebook_value = 0;
+
+function isEmpty( obj ) { 
+  for ( var prop in obj ) { 
+    return false; 
+  } 
+  return true; 
+}
  
 $(document).ready(function() {
+	var sites;
+	chrome.storage.local.get('sites', function (data) {
+		sites = data;
+		console.log(sites);
+	});
+
     $('body').on('click', '*', function (e) {
         click_count++;
         console.log("counting");
     });
     window.setInterval(function() {
         if(click_count >= 3) {
-        	console.log("greater than 3");
-            chrome.runtime.sendMessage({method: "send-payment", url: window.location.hostname}, function (response) {
-                console.log(response.status);
-            });
-            console.log("gets here");
+        	console.log(window.location.href);
+        	var matches = new Array();
+        	for (var site in sites.sites) {
+        		console.log(site);
+        		if (window.location.href.indexOf(site) != -1) {
+        			matches.push(site);
+        		}
+        	}
+
+        	if (matches.length > 0) {
+        		var largestLength = 0;
+        		var match;
+
+        		for (var i=0; i<matches.length; i++) {
+        			if (matches[i].length > largestLength) {
+        				largestLength = matches[i].length;
+        				match = matches[i];
+        			}
+        		}
+
+        		console.log(match);
+
+        		chrome.runtime.sendMessage({method: "send-payment", url: match}, function (response) {
+	                console.log(response.status);
+	            });
+	            console.log("gets here");
+        	}
+            
             click_count = 0;
         }
     }, 1000);
