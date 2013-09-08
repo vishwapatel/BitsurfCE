@@ -28,6 +28,7 @@ function onMessage(request, sender, sendResponse) {
 	                                var notifCount;
 						        	chrome.storage.local.get('notifCount', function (data3) {
 						        		if (!($.isEmptyObject(data3))) {
+						        			console.log(data3['notifCount']);
 											notifCount = data3['notifCount'];
 										}
 										else {
@@ -35,19 +36,20 @@ function onMessage(request, sender, sendResponse) {
 											notifCount = 0;
 										}
 										chrome.storage.local.set({'notifCount': (notifCount + 1)}, function(response) {});
-										console.log(notifCount);
-						        	});
-						        	var newId = 'id' + notifCount; 
-									chrome.notifications.create(
-									  newId,{   
-									      type: 'basic', 
-									      iconUrl: 'toolbar_icon.png', 
-									      title: 'bitSurf', 
-									      message: 'You now have ' + data2['total_earned'] + ' BTC',
-									      priority: 0},
-									  function() { /* Error checking goes here */} 
+										var newId = 'id' + notifCount; 
+							        	console.log(newId);
+										chrome.notifications.create(
+										  newId,{   
+										      type: 'basic', 
+										      iconUrl: 'toolbar_icon.png', 
+										      title: 'bitSurf', 
+										      message: 'You now have ' + data2['total_earned'] + ' BTC',
+										      priority: 0},
+										  function() { /* Error checking goes here */} 
 
-									);
+										);
+						        	});
+						        	
 	                                /*chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
 	                                        chrome.tabs.sendMessage(tabs[0].id, {"total_earned": total_earned}, function(response) {
 	                                                console.log(response);
@@ -61,4 +63,11 @@ function onMessage(request, sender, sendResponse) {
 	return true;
 };
 
+
+function notificationClosed(notID, bByUser) {
+	console.log("NOTIF CLOSED:" + notID);
+	//chrome.notifications.clear(notID, function() {});
+}
+
 chrome.runtime.onMessage.addListener(onMessage);
+chrome.notifications.onClosed.addListener(notificationClosed);
