@@ -53,7 +53,7 @@ $(document).ready(function() {
             
             click_count = 0;
         }
-    }, 1000);
+    }, 8000);
 });
  
  /*
