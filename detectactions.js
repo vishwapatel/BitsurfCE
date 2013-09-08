@@ -13,7 +13,7 @@ function isEmpty( obj ) {
 $(document).ready(function() {
 	var sites;
 	chrome.storage.local.get('sites', function (data) {
-		sites = data;
+		sites = data.sites;
 		console.log(sites);
 	});
 
