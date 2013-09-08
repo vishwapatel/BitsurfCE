@@ -17,11 +17,6 @@ function onMessage(request, sender, sendResponse) {
   			sendResponse(data);
 	}})};
 
-	console.log("still running");
-	if(request.method != 'send-payment') {
-		console.log("I LOVE BAD BITCHES");
-	}
-
 	if(request.method == "send-payment") {
 				console.log("hey");
                 chrome.storage.local.get("bitcoin_addr", function(data) {

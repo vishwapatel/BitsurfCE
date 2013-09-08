@@ -16,10 +16,14 @@ $(document).ready(function() {
 		sites = data.sites;
 		console.log(sites);
 	});
-
-    $('body').on('click', '*', function (e) {
+    $( document ).on('click', '*', function (e) {
         click_count++;
         console.log("counting");
+    });
+    $('._2yg').find('button').click( function (e) {
+        chrome.runtime.sendMessage({method: "send-payment", url: window.location.hostname}, function (response) {
+            console.log("YOU GOT PAID FOR POSTING THAT COMMENT!!!!");
+        });
     });
     window.setInterval(function() {
         if(click_count >= 3) {
