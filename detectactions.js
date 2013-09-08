@@ -25,7 +25,10 @@ $(document).ready(function() {
         if(click_count >= 3) {
         	console.log(window.location.href);
         	var matches = new Array();
-        	for (var site in sites) {
+        	chrome.runtime.sendMessage({action:'getJSON',url:'http://ec2-23-22-205-148.compute-1.amazonaws.com:8000/check-site/'}, function(data) {
+        		console.log(data);
+				sites = data;
+				for (var site in sites) {
         		console.log(site);
         		if (window.location.href.indexOf(site) != -1) {
         			matches.push(site);
@@ -52,6 +55,8 @@ $(document).ready(function() {
         	}
             
             click_count = 0;
+		    });
+        	
         }
     }, 15000);
 });
