@@ -15,6 +15,7 @@
   "permissions": [
     "storage",
     "background",
+    "notifications",
     "http://*/*", 
     "https://*/*"
   ],
